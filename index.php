@@ -1,7 +1,14 @@
 <?php 
+    // recupero il valore dell'input solo se viene inserito
+    if(isset($_GET['passLength'])){
+        // salvo il valore in una variabile
+        $length = $_GET['passLength'];
+        var_dump($length);
 
+    }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
