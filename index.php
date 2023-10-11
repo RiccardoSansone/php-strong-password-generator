@@ -3,16 +3,17 @@
     if(isset($_GET['passLength'])){
         // salvo il valore in una variabile
         $length = $_GET['passLength'];
-        var_dump($length);
-
-    }
-    $car = 'abcdefghilmnopqrst';
-
-    for($i = 0; $i <$passLength; $i++){
-        $pass = [];
-        $carachters = $car[rand(0,strlen($car))];
-        $pass[] = $carachters;
-        var_dump($pass);
+        // salvo in una variabile i possibili caratteri
+        $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789.!@$%';
+        // dichiaro una variabile di tipo stringa e gli assegno un valore vuoto
+        $password = '';
+        // ciclo for per iterare all'interno della stringa di caratteri n volte quante la lunghezza
+        for($i = 0; $i <$length; $i++){
+            // salvo in una variabile il singolo carattere ottenuto randomicamente
+            $car = $characters[rand(0,strlen($characters))];
+            //dichiaro una variabile la quale avrá come valore la concatenazione dei singoli caratteri ottenuti dal ciclo
+            $password .= $car;
+        }
     }
 
 ?>
@@ -43,6 +44,11 @@
         <!-- /form -->
     </div>
     <!-- /container -->
+    <p style="color: white; font-size:xx-small;" class="text-center mt-1">(valore consigliato > 10)</p>
+
+    <?php  if(isset($password)) : ?>
+        <p style="color: white;" class="text-center mt-4">la tua password corrisponde a :  <?= $password ?> </p>
+    <?php endif; ?>
 
 </body>
 </html>
