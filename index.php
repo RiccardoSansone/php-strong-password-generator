@@ -6,6 +6,14 @@
         var_dump($length);
 
     }
+    $car = 'abcdefghilmnopqrst';
+
+    for($i = 0; $i <$passLength; $i++){
+        $pass = [];
+        $carachters = $car[rand(0,strlen($car))];
+        $pass[] = $carachters;
+        var_dump($pass);
+    }
 
 ?>
 
