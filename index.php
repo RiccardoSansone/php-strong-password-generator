@@ -6,10 +6,8 @@
         // salvo in una variabile i possibili caratteri
         $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789.!@$%';
         // dichiaro una variabile di tipo stringa e gli assegno un valore vuoto
-        $password = '';
-
         include './functions.php';
-        $password = passGenerator($length, $characters, $password);
+        $password = passGenerator($length, $characters);
     }
 
 ?>
@@ -33,7 +31,7 @@
     <!-- container for center all -->
     <div class="container d-flex justify-center">
         <!-- form for password length -->
-        <form action="" method="$_GET" class="mt-1">
+        <form action="" method="get" class="mt-1">
             <input type="number" name="passLength" placeholder="type your number">
             <button type="submit">GENERA</button>
         </form>
