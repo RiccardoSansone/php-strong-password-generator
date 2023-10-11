@@ -9,7 +9,7 @@
         $password = '';
 
         include './functions.php';
-        passGenerator($length, $characters, $password);
+        $password = passGenerator($length, $characters, $password);
     }
 
 ?>
